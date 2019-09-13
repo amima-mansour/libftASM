@@ -6,7 +6,8 @@ NASM = nasm
 PATH_SRCS = src
 SRCS = 	$(addprefix $(PATH_SRCS)/, \
 	ft_isdigit.s \
-	ft_isalpha.s \
+	ft_isascii.s\
+	ft_isprint.s\
 	)
 
 PATH_OBJS = obj

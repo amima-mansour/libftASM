@@ -1,10 +1,14 @@
-int     ft_isalpha(int c);
- 
+#include <stdio.h>
+//int     ft_isalpha(int c);
+int     ft_isdigit(int c);
+int     ft_isascii(int c);
+int     ft_isprint(int c);
+
 int     main(void)
 {
-    if (ft_isalpha('A') == 1)
-        printf("alpha\n");
+    if (ft_isprint(31) == 1)
+        printf("print\n");
     else
-        printf("no alpha\n");
+        printf("no print\n");
     return (0);
 }
