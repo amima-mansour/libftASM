@@ -8,6 +8,7 @@ SRCS = 	$(addprefix $(PATH_SRCS)/, \
 	ft_isdigit.s \
 	ft_isascii.s\
 	ft_isprint.s\
+	ft_puts.s\
 	)
 
 PATH_OBJS = obj
