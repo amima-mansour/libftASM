@@ -1,13 +1,26 @@
-segment .text
-    global _ft_islower
+; ----------------------------------------------------------------------------------------
+;
+; FT_TOUPPER
+; int toupper( int character );
+;
+; ----------------------------------------------------------------------------------------
 
-_ft_islower:
-    mov eax, 1
-    cmp rdi, 97 
-    jl _return
-    cmp rdi, 122 
-    jg _return
-    ret
-    _return:
-    mov eax, 0
+segment .text
+    global _ft_toupper
+
+_ft_toupper:
+    push rbp
+    mov rbp, rsp
+    sub rsp, 16
+    
+    cmp rdi, 'a'
+    jl leave
+    cmp rdi, 'z'
+    jg leave
+    add rdi, 'A'
+    sub rdi, 'a'
+leave:
+    mov rax, rdi
+    mov rsp, rbp
+    pop rbp
     ret

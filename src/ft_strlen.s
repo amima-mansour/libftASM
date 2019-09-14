@@ -2,7 +2,7 @@
 ;
 ; FT_STRLEN
 ; 
-;
+; 
 ; ----------------------------------------------------------------------------------------
 
 segment .text
@@ -14,7 +14,6 @@ _ft_strlen:
     sub rsp, 16
     
     xor rcx, rcx
-    xor rax, rax
     dec rcx
     .loop:
     inc rcx
