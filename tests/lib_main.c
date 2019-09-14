@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 //int     ft_isalpha(int c);
 int     ft_isdigit(int c);
@@ -11,7 +12,8 @@ void    ft_bzero(void *s, size_t n);
 int     ft_toupper(int c);
 int     ft_tolower(int c);
 void    *ft_memset (void *s, int c, size_t n);
-char    *strdup(const char *s);
+char    *ft_strdup(const char *s);
+char    *ft_strcat(char *dest, const char *src);
 
 int     main(void)
 {
@@ -23,10 +25,17 @@ int     main(void)
   printf("S1 = %s\n", s);
   printf("S2 = %s\n", s + 8);*/
   
-  char *s = strdup("hellohello"); 
-  printf("STRDUP = %s\n", s);
-  s = ft_memset(s, 'k', 120);
-  printf("S1 = %s\n", s);
+  char *s = strdup("hellohello");
+  char *str = (char*)malloc(15);
+  ft_bzero(str, 15);
+  int i;
+  i = -1;
+  while (++i < 10)
+    str[i] = 'A';
+  str = ft_strcat(str, s);
+  printf("STRCAT = %s\n", str);
+  //s = ft_memset(s, 'k', 120);
+  //printf("S1 = %s\n", s);
   /****ft_strlen****/
   //printf("%d\n", ft_strlen("hello"));
   
