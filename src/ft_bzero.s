@@ -1,15 +1,22 @@
+; ----------------------------------------------------------------------------------------
+;
+; FT_BZERO
+; 
+; 
+; ----------------------------------------------------------------------------------------
+
 global _ft_bzero
 _ft_bzero:
-    call _loop
-    ret
-_loop:
-    ; rsi--
+    push rbp
+    mov rbp, rsp
+    sub rsp, 16
+loop:
     dec rsi
-    ; if (rsi < 0) return
     cmp rsi, 0
-    jl _ret
-    ; rdi[rsi] = 0
-    mov byte [rdi+rsi], 0
-    jmp _loop
-_ret:
+    jl leave
+    mov byte [rdi + rsi], 0
+    jmp loop
+leave:
+    mov rsp, rbp
+    pop rbp
     ret

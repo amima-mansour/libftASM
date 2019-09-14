@@ -5,19 +5,28 @@
 ; renvoi un nombre non négatif si elle réussit et EOF si elle échoue.
 ; ----------------------------------------------------------------------------------------
 
+segment .data
+new db 10
+
 segment .text
-    global _ft_ft_puts
+    global _ft_puts
+    extern _ft_strlen
 
 _ft_puts:
     push rbp
     mov rbp, rsp
     sub rsp, 16
 
-    mov rsi, [rdi]
-    mov	rax, 4   ; syscall number (sys_write)
-    mov	ebx, 1   ; file descriptor (stdout)
-    mov	edx, 4   ; message length
-    mov	ecx, rsi ; message to write
+    mov rsi, rdi
+    call _ft_strlen
+    mov rdx, rax
+    mov	rax, 0x2000004   ; syscall number (sys_write)
+    mov	rdi, 1           ; file descriptor (stdout)
+    syscall
+    mov rdx, 1
+	mov rax, 0x2000004
+    lea rsi, [rel new]
+    syscall
     jmp leave
 
 leave:
