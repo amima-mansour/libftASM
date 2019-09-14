@@ -6,6 +6,8 @@
 int     ft_isdigit(int c);
 int     ft_isascii(int c);
 int     ft_isprint(int c);
+int     ft_isalpha(int c);
+int     ft_isalnum(int c);
 int     ft_puts(char *s);
 int     ft_strlen(char *s);
 void    ft_bzero(void *s, size_t n);
@@ -14,7 +16,8 @@ int     ft_tolower(int c);
 void    *ft_memset (void *s, int c, size_t n);
 char    *ft_strdup(const char *s);
 char    *ft_strcat(char *dest, const char *src);
-
+void    *ft_memcpy(void *dest, const void *src, size_t n);
+int    ft_cat(int fd);
 int     main(void)
 {
   /****ft_toupper****/
@@ -30,10 +33,10 @@ int     main(void)
   ft_bzero(str, 15);
   int i;
   i = -1;
-  while (++i < 10)
-    str[i] = 'A';
-  str = ft_strcat(str, s);
-  printf("STRCAT = %s\n", str);
+  //while (++i < 10)
+   // str[i] = 'A';
+  str = ft_memcpy(str, s, 5);
+  printf("MEMCPY = %s\n", str);
   //s = ft_memset(s, 'k', 120);
   //printf("S1 = %s\n", s);
   /****ft_strlen****/
@@ -48,4 +51,11 @@ int     main(void)
   else
       printf("no print\n");
     return (0);*/
+    /****ft_isalnum***/
+  if (ft_isalnum(123) == 1)
+      printf("alnum\n");
+  else
+      printf("no alnum\n");
+    printf("%d\n", ft_cat(0));
+    return (0);
 }

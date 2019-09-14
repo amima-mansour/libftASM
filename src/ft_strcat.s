@@ -12,23 +12,25 @@ _ft_strcat:
     mov rbp, rsp
     sub rsp, 16
     
-    mov rbx, rdi
     call _ft_strlen
     mov rdx, rax
+    mov rbx, rdi
     mov rdi, rsi
     call _ft_strlen
     mov r8, rax
-    mov rax, rbx
+    mov rdi, rbx
     sub rcx, rcx
 loop:
     cmp rcx, r8
-    jge leave
-    mov dl, byte [rdi + rcx]
-    mov byte [rax + rdx], dl 
+    je leave
+    mov bl, byte [rsi + rcx]
+    mov byte [rdi + rdx], bl 
     inc rcx
     inc rdx
     jmp loop
 leave:
+    mov byte [rdi + rdx], 0
+    mov rax, rdi
     mov rsp, rbp
     pop rbp
     ret
