@@ -17,7 +17,10 @@ void    *ft_memset (void *s, int c, size_t n);
 char    *ft_strdup(const char *s);
 char    *ft_strcat(char *dest, const char *src);
 void    *ft_memcpy(void *dest, const void *src, size_t n);
-int    ft_cat(int fd);
+int     ft_cat(int fd);
+int     ft_strcmp(char *str1, char *str2);
+
+
 int     main(void)
 {
   /****ft_toupper****/
@@ -58,5 +61,7 @@ int     main(void)
       printf("no alnum\n");*/
     /***ft_cat***/
     //printf("%d\n", ft_cat(0));
+    /**ft_strcmp**/
+    printf("%d\n", ft_strcmp("Amina", "Amika"));
     return (0);
 }
