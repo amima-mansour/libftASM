@@ -5,10 +5,11 @@
 ; void ft_cat(int fd)
 ; ----------------------------------------------------------------------------------------
 
-section .data
-    size equ 10
+%define STDOUT 1
+%define BUFFER_SIZE 5
+
 section .bss
-    buffer resb 10
+    buffer resb BUFFER_SIZE
 section .text
     global _ft_cat
     extern  _ft_puts
@@ -16,23 +17,22 @@ _ft_cat:
     push rbp
     mov rbp, rsp
     sub rsp, 16
+    
     mov rbx, rdi
-    lea rsi, [rel buffer] ; buffer
+    lea rsi, [rel buffer]
 loop_read:
     mov rax, 0x2000003
-    mov rdx, size         ; buffer size
+    mov rdx, BUFFER_SIZE
     syscall
-    mov rdx, rax
-    cmp rdx, 0
+    cmp rax, 0
     jle leave
-    jmp write
+    mov rdx, rax
+write:
+    mov rax, 0x2000004
+    mov	rdi, STDOUT
+    syscall
     mov rdi, rbx
     jmp loop_read
-    jmp leave
-write:
-    mov rax, 0x2000004  ; write
-    mov	rdi, 1          ; file descriptor (stdout)
-    syscall
 leave:
     mov rax, rdx
     mov rsp, rbp

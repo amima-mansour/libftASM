@@ -52,10 +52,11 @@ int     main(void)
       printf("no print\n");
     return (0);*/
     /****ft_isalnum***/
-  if (ft_isalnum(123) == 1)
+  /*if (ft_isalnum(123) == 1)
       printf("alnum\n");
   else
-      printf("no alnum\n");
-    printf("%d\n", ft_cat(0));
+      printf("no alnum\n");*/
+    /***ft_cat***/
+    //printf("%d\n", ft_cat(0));
     return (0);
 }
