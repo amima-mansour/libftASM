@@ -19,7 +19,7 @@ char    *ft_strcat(char *dest, const char *src);
 void    *ft_memcpy(void *dest, const void *src, size_t n);
 int     ft_cat(int fd);
 int     ft_strcmp(char *str1, char *str2);
-
+char    *ft_strchr(char * string, int searchedChar);
 
 int     main(void)
 {
@@ -62,6 +62,8 @@ int     main(void)
     /***ft_cat***/
     //printf("%d\n", ft_cat(0));
     /**ft_strcmp**/
-    printf("%d\n", ft_strcmp("Amina", "Amika"));
+    //printf("%d\n", ft_strcmp("Amina", "Amika"));
+    /**ft_strchr**/
+    printf("occ = %s\n", ft_strchr("Aminamansour", 'a'));
     return (0);
 }
