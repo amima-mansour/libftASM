@@ -11,10 +11,11 @@ _ft_bzero:
     mov rbp, rsp
     sub rsp, 16
 loop:
-    dec rsi
     cmp rsi, 0
-    jl leave
-    mov byte [rdi + rsi], 0
+    je leave
+    mov byte [rdi], 0
+    inc rdi
+    dec rsi
     jmp loop
 leave:
     mov rsp, rbp
