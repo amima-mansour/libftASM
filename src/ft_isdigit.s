@@ -12,10 +12,11 @@ _ft_isdigit:
     push rbp
     mov rbp, rsp
     sub rsp, 16
+    
     mov rax, 1
-    cmp edi, '0'
+    cmp rdi, '0'
     jl no
-    cmp edi, '9'
+    cmp rdi, '9'
     jg no
     jmp leave
 

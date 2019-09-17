@@ -20,6 +20,7 @@ void    *ft_memcpy(void *dest, const void *src, size_t n);
 int     ft_cat(int fd);
 int     ft_strcmp(char *str1, char *str2);
 char    *ft_strchr(char * string, int searchedChar);
+int     ft_atoi(char *theString);
 
 int     main(void)
 {
@@ -64,6 +65,8 @@ int     main(void)
     /**ft_strcmp**/
     //printf("%d\n", ft_strcmp("Amina", "Amika"));
     /**ft_strchr**/
-    printf("occ = %s\n", ft_strchr("Aminamansour", 'a'));
+    /*printf("occ = %s\n", ft_strchr("Aminamansour", 'a'));*/
+    /**ft_atoi**/
+    printf("result = %d\n", ft_atoi("-1223"));
     return (0);
 }

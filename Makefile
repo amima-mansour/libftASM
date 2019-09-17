@@ -22,6 +22,7 @@ SRCS = 	$(addprefix $(PATH_SRCS)/, \
 	ft_cat.s\
 	ft_strcmp.s\
 	ft_strchr.s\
+	ft_atoi.s\
 	)
 
 PATH_OBJS = obj
