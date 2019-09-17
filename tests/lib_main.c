@@ -21,6 +21,10 @@ int     ft_cat(int fd);
 int     ft_strcmp(char *str1, char *str2);
 char    *ft_strchr(char * string, int searchedChar);
 int     ft_atoi(char *theString);
+int     ft_abs(int n);
+char    *ft_strjoin(const char *s1, const char *s2);
+char	*ft_strnew(size_t size);
+char	*ft_strcpy(char *dest, char const *src);
 
 int     main(void)
 {
@@ -67,6 +71,13 @@ int     main(void)
     /**ft_strchr**/
     /*printf("occ = %s\n", ft_strchr("Aminamansour", 'a'));*/
     /**ft_atoi**/
-    printf("result = %d\n", ft_atoi("-1223"));
+    //printf("result = %d\n", ft_atoi("-1223"));
+    /***ft_abs***/
+    /*printf("%d\n", ft_abs(12300));*/
+    /***ft_strjoin***/
+    //char *s1 = ft_strnew(12);
+    //printf("Copy = %s\n", ft_strcpy(s1, "hello"));
+    //printf("%s\n", ft_strnew(12));
+    printf("%s\n", ft_strjoin("Hello ", "World !"));
     return (0);
 }
