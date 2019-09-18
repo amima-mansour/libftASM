@@ -4,11 +4,8 @@
 ; char *strdup(const char *s);
 ; to use malloc
 ; ----------------------------------------------------------------------------------------
-
+section .text
 global _ft_strdup
-extern _malloc
-
-extern _ft_memcpy
 extern _ft_strlen
 extern _ft_strnew
 extern _ft_strcpy
@@ -29,7 +26,6 @@ _ft_strdup:
     mov rsi, [rsp]
     call _ft_strcpy
 leave:
-    ;mov byte [rax + rcx], 0
     mov rsp, rbp
     pop rbp
     ret

@@ -5,10 +5,10 @@
 ;
 ; ----------------------------------------------------------------------------------------
 
-
-global _ft_strnew
-extern _ft_memalloc
-extern _ft_bzero
+section .text
+  global _ft_strnew
+  extern _malloc
+  extern _ft_bzero
 
 _ft_strnew:
     push rbp
@@ -17,7 +17,7 @@ _ft_strnew:
 
     add rdi, 1
     mov [rsp], rdi
-    call _ft_memalloc
+    call _malloc
     cmp rax, 0
     je leave
     mov rsi, [rsp]
