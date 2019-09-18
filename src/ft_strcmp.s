@@ -13,11 +13,11 @@ _ft_strcmp:
 loop:
     movzx rax, byte[rdi]
     movzx rbx, byte[rsi]
-    cmp rax, 0
+    sub rax, rbx
+    cmp byte[rdi], 0
     je leave
     cmp rbx, 0
     je leave
-    sub rax, rbx
     cmp rax, 0
     jne leave
     inc rdi
