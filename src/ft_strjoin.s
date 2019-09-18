@@ -7,6 +7,8 @@
 
 
 global _ft_strjoin
+extern _malloc
+extern _ft_memcpy
 extern _ft_strnew
 extern _ft_strlen
 extern _ft_strcpy
