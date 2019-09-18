@@ -6,7 +6,9 @@
 ; ----------------------------------------------------------------------------------------
 
 segment .data
-new db 10
+    new db 10
+	null db "(null)", 0
+
 
 segment .text
     global _ft_puts
@@ -17,6 +19,12 @@ _ft_puts:
     mov rbp, rsp
     sub rsp, 16
 
+    cmp rdi, 0
+    je add_null
+    jmp write
+add_null:
+    lea rdi, [rel null]
+write:
     mov rsi, rdi
     call _ft_strlen
     mov rdx, rax
@@ -27,9 +35,7 @@ _ft_puts:
 	mov rax, 0x2000004
     lea rsi, [rel new]
     syscall
-    jmp leave
-
 leave:
-  mov rsp, rbp
-  pop rbp
-  ret
+    mov rsp, rbp
+    pop rbp
+    ret

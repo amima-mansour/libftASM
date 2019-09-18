@@ -15,11 +15,12 @@ _ft_strlen:
     
     xor rcx, rcx
     dec rcx
-    .loop:
+loop:
     inc rcx
     cmp byte[rdi + rcx], 0
-    jne .loop
+    jne loop
     mov rax, rcx
+leave:    
     mov rsp, rbp
     pop rbp
     ret

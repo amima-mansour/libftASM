@@ -6,8 +6,12 @@
 ; ----------------------------------------------------------------------------------------
 
 global _ft_strdup
-extern _ft_strlen
 extern _malloc
+
+extern _ft_memcpy
+extern _ft_strlen
+extern _ft_strnew
+extern _ft_strcpy
 
 _ft_strdup:
     push rbp
@@ -15,21 +19,17 @@ _ft_strdup:
     sub rsp, 16
     
     call _ft_strlen
-    mov rsi, rdi
+    mov [rsp], rdi
     mov rdi, rax
     add rdi, 1
-    call _malloc
-    xor rcx, rcx
-    sub rdi, 1
-loop:
-    inc rcx
-    cmp rcx, rdi
-    jge leave
-    mov bl, byte [rsi + rcx]
-    mov byte [rax + rcx], bl 
-    jmp loop
+    call _ft_strnew
+    cmp rax, 0
+    je leave
+    mov rdi, rax
+    mov rsi, [rsp]
+    call _ft_strcpy
 leave:
-    mov byte [rax + rcx], 0
+    ;mov byte [rax + rcx], 0
     mov rsp, rbp
     pop rbp
     ret

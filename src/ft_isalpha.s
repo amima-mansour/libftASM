@@ -17,7 +17,7 @@ _ft_isalpha:
     cmp rdi, 'z'
     jg no
     cmp rdi, 'Z'
-    jl yes
+    jle yes
     cmp rdi, 'a'
     jl no
     jmp yes
