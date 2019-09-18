@@ -20,7 +20,7 @@ loop:
     inc rcx
     jmp loop
 leave:
-    mov byte [rdi + rcx], 0
+    ;mov byte [rdi + rcx], 0
     mov rax, rdi
     mov rsp, rbp
     pop rbp
