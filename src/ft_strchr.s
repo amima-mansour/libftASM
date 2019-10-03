@@ -10,7 +10,6 @@ global _ft_strchr
 _ft_strchr:
     push rbp
     mov rbp, rsp
-    sub rsp, 16
 loop:
     cmp byte[rdi], sil
     je leave

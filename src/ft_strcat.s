@@ -10,20 +10,19 @@ section .text
 _ft_strcat:
     push rbp
     mov rbp, rsp
-    sub rsp, 16
 
     call _ft_strlen
-    .loop:
-        cmp byte[rsi], 0
-        je .leave
-        mov dh, byte [rsi]
-        mov byte [rdi + rax], dh 
-        inc rsi
-        inc rax
-        jmp .loop
-    .leave:
-        mov byte [rdi + rax], 0
-        mov rax, rdi
-        mov rsp, rbp
-        pop rbp
-        ret
+loop:
+    cmp byte[rsi], 0
+    je leave
+    mov dh, byte [rsi]
+    mov byte [rdi + rax], dh 
+    inc rsi
+    inc rax
+    jmp loop
+leave:
+    mov byte [rdi + rax], 0
+    mov rax, rdi
+    mov rsp, rbp
+    pop rbp
+    ret

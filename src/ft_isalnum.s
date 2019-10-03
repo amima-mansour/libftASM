@@ -12,7 +12,6 @@ extern _ft_isdigit
 _ft_isalnum:
     push rbp
     mov rbp, rsp
-    sub rsp, 16
 
     call _ft_isdigit
     cmp rax, 1

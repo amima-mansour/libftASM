@@ -10,7 +10,6 @@ extern _ft_isdigit
 _ft_atoi:
     push rbp
     mov rbp, rsp
-    sub rsp, 16
 blanks:
     cmp byte [rdi], 7
     jl resolve

@@ -9,7 +9,6 @@ global _ft_strcmp
 _ft_strcmp:
     push rbp
     mov rbp, rsp
-    sub rsp, 16
 loop:
     movzx rax, byte[rdi]
     movzx rbx, byte[rsi]

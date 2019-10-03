@@ -11,7 +11,6 @@ segment .text
 _ft_isdigit:
     push rbp
     mov rbp, rsp
-    sub rsp, 16
     
     mov rax, 1
     cmp rdi, '0'

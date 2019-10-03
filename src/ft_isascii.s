@@ -11,7 +11,6 @@ segment .text
 _ft_isascii:
     push rbp
     mov rbp, rsp
-    sub rsp, 16
     mov rax, 1
     cmp edi, 0
     jl no

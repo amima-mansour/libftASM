@@ -17,7 +17,6 @@ _ft_cat:
     push rbp
     mov rbp, rsp
     sub rsp, 16
-    
     mov [rsp], rdi
 loop_read:
     mov rdi, [rsp]

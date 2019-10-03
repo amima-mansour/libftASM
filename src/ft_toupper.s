@@ -11,7 +11,6 @@ segment .text
 _ft_toupper:
     push rbp
     mov rbp, rsp
-    sub rsp, 16
     
     cmp rdi, 'a'
     jl leave

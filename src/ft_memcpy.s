@@ -10,17 +10,16 @@ section .text
 _ft_memcpy:
     push rbp
     mov rbp, rsp
-    sub rsp, 16
     xor rcx, rcx
-    .loop:
-        cmp rcx, rdx
-        je .leave
-        mov bh, byte [rsi + rcx]
-        mov byte [rdi + rcx], bh
-        inc rcx
-        jmp .loop
-    .leave:
-        mov rax, rdi
-        mov rsp, rbp
-        pop rbp
-        ret
+loop:
+    cmp rcx, rdx
+    je leave
+    mov bh, byte [rsi + rcx]
+    mov byte [rdi + rcx], bh
+    inc rcx
+    jmp loop
+leave:
+    mov rax, rdi
+    mov rsp, rbp
+    pop rbp
+    ret

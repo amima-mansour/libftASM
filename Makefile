@@ -27,8 +27,7 @@ SRCS = 	$(addprefix $(PATH_SRCS)/, \
 	ft_strjoin.s \
 	ft_atoi.s \
 	ft_strchr.s \
-	ft_cat.s \
-	)
+	ft_cat.s)
 
 PATH_OBJS = obj
 OBJS = $(SRCS:$(PATH_SRCS)/%.s=$(PATH_OBJS)/%.o)
@@ -74,4 +73,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean re test
+.PHONY: all clean fclean re test

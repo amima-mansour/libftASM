@@ -9,7 +9,6 @@ global _ft_bzero
 _ft_bzero:
     push rbp
     mov rbp, rsp
-    sub rsp, 16
 loop:
     cmp rsi, 0
     je leave

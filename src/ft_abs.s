@@ -10,7 +10,6 @@ global _ft_abs
 _ft_abs:
     push rbp
     mov rbp, rsp
-    sub rsp, 16
     mov rax, rdi
     sar rax, 31
     cmp rax, 1
