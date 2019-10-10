@@ -9,15 +9,12 @@ global _ft_memset
 _ft_memset:
     push rbp
     mov rbp, rsp
-    xor rcx, rcx
-loop:
-    cmp rcx, rdx 
-    jge leave
-    mov byte[rdi + rcx], sil
-    inc rcx
-    jmp loop
-leave:
-    mov rax, rdi
+    push rdi
+    mov al, sil
+    mov rcx, rdx
+    rep stosb
+.leave:
+    pop rax
     mov rsp, rbp
     pop rbp
     ret

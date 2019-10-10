@@ -12,21 +12,21 @@ _ft_isalpha:
     mov rbp, rsp
 
     cmp rdi, 'A'
-    jl no
+    jl .no
     cmp rdi, 'z'
-    jg no
+    jg .no
     cmp rdi, 'Z'
-    jle yes
+    jle .yes
     cmp rdi, 'a'
-    jl no
-    jmp yes
-yes:
+    jl .no
+    jmp .yes
+.yes:
     mov rax, 1
-    jmp leave
-no:
+    jmp .leave
+.no:
     mov rax, 0
-    jmp leave
-leave:
+    jmp .leave
+.leave:
     mov rsp, rbp
     pop rbp
     ret

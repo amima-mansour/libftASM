@@ -17,12 +17,12 @@ _ft_memalloc:
     mov [rsp], rdi
     call _malloc
     cmp rax, 0
-    je leave
+    je .leave
     mov rsi, 0
     mov rdi, rax
     mov rdx, [rsp]
     call _ft_memset
-leave:
+.leave:
   mov rsp, rbp
   pop rbp
   ret

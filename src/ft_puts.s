@@ -19,11 +19,11 @@ _ft_puts:
     mov rbp, rsp
 
     cmp rdi, 0
-    je add_null
-    jmp write
-add_null:
+    je .add_null
+    jmp .write
+.add_null:
     lea rdi, [rel null]
-write:
+.write:
     mov rsi, rdi
     call _ft_strlen
     mov rdx, rax
@@ -34,7 +34,7 @@ write:
 	mov rax, 0x2000004
     lea rsi, [rel new]
     syscall
-leave:
+.leave:
     mov rsp, rbp
     pop rbp
     ret

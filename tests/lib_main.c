@@ -6,7 +6,7 @@
 /*   By: amansour <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 17:01:53 by amansour          #+#    #+#             */
-/*   Updated: 2019/10/03 17:02:06 by amansour         ###   ########.fr       */
+/*   Updated: 2019/10/10 11:25:02 by amansour         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,26 +78,6 @@ void		check_memalloc(void)
 	s = ft_memalloc(20);
 	printf("after: %s\n", s);
 	printf("END OF MEMALLOC\n");
-}
-
-void		check_abs(void)
-{
-	int nbr;
-
-	printf("ABS\n");
-	/******************test1**********************/
-	nbr = -10000;
-	printf("NB: %d ABS => %d\n", nbr, ft_abs(nbr));
-	/******************test2**********************/
-	nbr = 1234567;
-	printf("NB: %d ABS => %d\n", nbr, ft_abs(nbr));
-	/******************test3**********************/
-	nbr = -11;
-	printf("NB: %d ABS => %d\n", nbr, ft_abs(nbr));
-	/******************test4**********************/
-	nbr = 0;
-	printf("NB: %d ABS => %d\n", nbr, ft_abs(nbr));
-	printf("END OF ABS\n");
 }
 
 void		check_strnew(void)
@@ -552,8 +532,6 @@ int			main(void)
 	check_strcmp();
 	printf("\n");
 	check_strchr();
-	printf("\n");
-	check_abs();
 	printf("\n");
 	check_cat();
 	return 0;

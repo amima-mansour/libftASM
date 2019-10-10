@@ -18,25 +18,25 @@ _ft_cat:
     mov rbp, rsp
     sub rsp, 16
     mov [rsp], rdi
-loop_read:
+.loop_read:
     mov rdi, [rsp]
     lea rsi, [rel buffer]
     mov rdx, BUFFER_SIZE
     mov rax, 0x2000003
     syscall
-    jc leave						; exit Error (rax is neg, carry flag is set)
+    jc .leave						; exit Error (rax is neg, carry flag is set)
 	cmp rax, 0						; check read EOF
-    je leave
-write:
+    je .leave
+.write:
     mov rdx, rax
     mov rax, 0x2000004
     mov	rdi, STDOUT
     lea rsi, [rel buffer]
     syscall
-    jc leave						; exit Error (rax is neg, carry flag is set)
+    jc .leave						; exit Error (rax is neg, carry flag is set)
     mov rdi, [rsp]
-    jmp loop_read
-leave:
+    jmp .loop_read
+.leave:
     mov rsp, rbp
     pop rbp
     ret

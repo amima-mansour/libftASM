@@ -14,16 +14,15 @@ _ft_isdigit:
     
     mov rax, 1
     cmp rdi, '0'
-    jl no
+    jl .no
     cmp rdi, '9'
-    jg no
-    jmp leave
+    jg .no
+    jmp .leave
 
-no:
+.no:
   mov rax, 0
-	jmp leave
 
-leave:
+.leave:
   mov rsp, rbp
   pop rbp
   ret

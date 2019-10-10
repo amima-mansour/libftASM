@@ -13,16 +13,15 @@ _ft_isascii:
     mov rbp, rsp
     mov rax, 1
     cmp edi, 0
-    jl no
+    jl .no
     cmp edi, 127
-    jg no
-    jmp leave
+    jg .no
+    jmp .leave
 
-no:
+.no:
   mov rax, 0
-	jmp leave
 
-leave:
+.leave:
   mov rsp, rbp
   pop rbp
   ret

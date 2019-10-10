@@ -15,11 +15,11 @@ _ft_isalnum:
 
     call _ft_isdigit
     cmp rax, 1
-    jne no
-    jmp leave
-no:
+    jne .no
+    jmp .leave
+.no:
     call _ft_isalpha
-leave:
+.leave:
     mov rsp, rbp
     pop rbp
     ret

@@ -18,14 +18,13 @@ _ft_strdup:
     call _ft_strlen
     mov [rsp], rdi
     mov rdi, rax
-    add rdi, 1
     call _ft_strnew
     cmp rax, 0
-    je leave
+    je .leave
     mov rdi, rax
     mov rsi, [rsp]
     call _ft_strcpy
-leave:
+.leave:
     mov rsp, rbp
     pop rbp
     ret

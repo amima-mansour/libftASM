@@ -7,19 +7,17 @@
 ; ----------------------------------------------------------------------------------------
 section .text
     global _ft_memcpy
+
 _ft_memcpy:
     push rbp
     mov rbp, rsp
-    xor rcx, rcx
-loop:
-    cmp rcx, rdx
-    je leave
-    mov bh, byte [rsi + rcx]
-    mov byte [rdi + rcx], bh
-    inc rcx
-    jmp loop
-leave:
-    mov rax, rdi
+    sub rsp,16
+    push rdi
+    mov rcx, rdx
+    cld
+    rep movsb
+.leave:
+    pop rax
     mov rsp, rbp
     pop rbp
     ret

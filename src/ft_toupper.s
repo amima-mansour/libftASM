@@ -13,12 +13,12 @@ _ft_toupper:
     mov rbp, rsp
     
     cmp rdi, 'a'
-    jl leave
+    jl .leave
     cmp rdi, 'z'
-    jg leave
+    jg .leave
     add rdi, 'A'
     sub rdi, 'a'
-leave:
+.leave:
     mov rax, rdi
     mov rsp, rbp
     pop rbp

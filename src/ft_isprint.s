@@ -13,16 +13,15 @@ _ft_isprint:
     mov rbp, rsp
     mov rax, 1
     cmp edi, 32
-    jl no
+    jl .no
     cmp edi, 126
-    jg no
-    jmp leave
+    jg .no
+    jmp .leave
 
-no:
+.no:
   mov rax, 0
-	jmp leave
 
-leave:
+.leave:
   mov rsp, rbp
   pop rbp
   ret

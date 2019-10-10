@@ -12,15 +12,15 @@ _ft_strcat:
     mov rbp, rsp
 
     call _ft_strlen
-loop:
+.loop:
     cmp byte[rsi], 0
-    je leave
+    je .leave
     mov dh, byte [rsi]
     mov byte [rdi + rax], dh 
     inc rsi
     inc rax
-    jmp loop
-leave:
+    jmp .loop
+.leave:
     mov byte [rdi + rax], 0
     mov rax, rdi
     mov rsp, rbp

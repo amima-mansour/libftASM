@@ -8,10 +8,12 @@
 global _ft_strcpy
 extern _ft_strlen
 extern _ft_memcpy
+
 _ft_strcpy:
     push rbp
     mov rbp, rsp
     sub rsp, 16
+
     mov [rsp], rdi
 	mov [rsp + 8], rsi
 	mov rdi, rsi
@@ -21,9 +23,7 @@ _ft_strcpy:
     mov rdi, [rsp]
 	mov rsi, [rsp + 8]
 	call _ft_memcpy
-leave:
-    mov byte [rdi + rcx], 0
-    mov rax, rdi
+.leave:
     mov rsp, rbp
     pop rbp
     ret

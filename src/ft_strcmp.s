@@ -14,15 +14,15 @@ loop:
     movzx rbx, byte[rsi]
     sub rax, rbx
     cmp byte[rdi], 0
-    je leave
+    je .leave
     cmp rbx, 0
-    je leave
+    je .leave
     cmp rax, 0
-    jne leave
+    jne .leave
     inc rdi
     inc rsi
     jmp loop
-leave:
+.leave:
     mov rsp, rbp
     pop rbp
     ret

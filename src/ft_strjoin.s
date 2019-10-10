@@ -19,9 +19,9 @@ _ft_strjoin:
     sub rsp, 16
 
     cmp rdi, 0
-    je leave
+    je .leave
     cmp rsi, 0
-    je leave
+    je .leave
 
     mov [rsp], rdi      ;push to the stack
 	mov [rsp + 8], rsi  ; push to the stack
@@ -35,7 +35,7 @@ _ft_strjoin:
     mov rdi, rcx
     call _ft_strnew ; create a new string
     cmp rax, 0
-    je leave        ; malloc error => exit
+    je .leave        ; malloc error => exit
     
     mov rdi, rax
     mov rsi, [rsp]
@@ -44,7 +44,7 @@ _ft_strjoin:
     mov rdi, rax
     mov rsi, [rsp + 8]
     call _ft_strcat
-leave:
+.leave:
     mov rsp, rbp
     pop rbp
     ret

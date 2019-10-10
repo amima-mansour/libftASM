@@ -19,11 +19,11 @@ _ft_strnew:
     mov [rsp], rdi
     call _malloc
     cmp rax, 0
-    je leave
+    je .leave
     mov rsi, [rsp]
     mov rdi, rax
     call _ft_bzero
-leave:
+.leave:
   mov rsp, rbp
   pop rbp
   ret

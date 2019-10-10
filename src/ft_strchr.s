@@ -10,16 +10,16 @@ global _ft_strchr
 _ft_strchr:
     push rbp
     mov rbp, rsp
-loop:
+.loop:
     cmp byte[rdi], sil
-    je leave
+    je .leave
     cmp byte [rdi], 0
-    je res_null
+    je .res_null
     inc rdi
-    jmp loop
-res_null :
+    jmp .loop
+.res_null :
     mov rdi, 0
-leave:
+.leave:
     mov rax, rdi
     mov rsp, rbp
     pop rbp
